@@ -26,4 +26,4 @@ afghanistan$gdp <- afghanistan$pop*afghanistan$gdpPercap #make this a variable
 
 write.csv(x = afghanistan, file = "./Results/afghanistan.csv") #write a dumb csv
 
-          
+#wooowww
