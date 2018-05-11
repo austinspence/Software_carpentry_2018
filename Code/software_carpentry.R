@@ -27,3 +27,29 @@ afghanistan$gdp <- afghanistan$pop*afghanistan$gdpPercap #make this a variable
 write.csv(x = afghanistan, file = "./Results/afghanistan.csv") #write a dumb csv
 
 #wooowww
+
+
+###############################################################################################
+# Day 2 Software Carpentry!
+# May 11, 2018
+
+## Conditional Statements
+library(dplyr)
+library(ggplot2)
+
+number <- 100
+
+
+if(number > 100){
+  print("greather than 100")
+} else{
+  print("less than 100")
+}
+print("done yo")
+
+
+
+
+
+
+
