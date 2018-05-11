@@ -4,7 +4,7 @@
 
 setwd("~/Desktop")
 
-jesus <- read.csv("software.csv")
+jesus <- read.csv("data/software.csv")
 
 
 ## MAKE SOME CATS
@@ -47,9 +47,43 @@ if(number > 100){
 }
 print("done yo")
 
+###### Creating and using functions
+
+f_to_k <- function(temp){
+  kelvin <- (temp-32)*(5/9) + 273.15
+  return(kelvin)
+}
+
+k_to_c <- function(temp){
+  cel <- (temp-273.15)
+  return(cel)
+}
+
+f_to_k(temp = 100)
+f_to_k(-459.6699999999999)
+
+k_to_c(0)
+
+k_to_c(f_to_k(-459.6699999999999))
 
 
+#### Plot in some ggplot :(
 
+plot(jesus$gdpPercap, jesus$lifeExp)
 
+ggplot(data = jesus, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point()
 
+ggplot(data = jesus, aes(x = gdpPercap, y = lifeExp, color = continent)) + 
+  scale_x_log10() +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  theme_classic() +
+  ggtitle("Effects of Per Capita GDP on Life Expectancy") +
+  xlab("GDP per Capita") +
+  ylab("Life Expectancy (Years)")
+
+ggsave(file = "results/life_expectancy.png")
+
+# faceting
 
